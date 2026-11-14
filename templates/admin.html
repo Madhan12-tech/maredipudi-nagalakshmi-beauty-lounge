@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beauty Lounge - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="admin-page">
+
+    <main class="admin-wrap">
+
+        <p class="eyebrow">SALON MANAGEMENT</p>
+
+        <h1>Appointment Requests</h1>
+
+        <p>
+            <a href="{{ url_for('home') }}">
+                ← Back to Website
+            </a>
+        </p>
+
+        {% if bookings %}
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for b in bookings %}
+
+                    <tr>
+                        <td>{{ b.customer_name }}</td>
+                        <td>{{ b.phone }}</td>
+                        <td>{{ b.service }}</td>
+                        <td>{{ b.appointment_date }}</td>
+                        <td>{{ b.appointment_time }}</td>
+                        <td>{{ b.message or '—' }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <p>No appointment requests yet.</p>
+
+        {% endif %}
+
+        <p class="warning">
+            Demo admin page: this page is not password-protected.
+            Add authentication before using it publicly.
+        </p>
+
+    </main>
+
+</body>
+</html>
