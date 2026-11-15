@@ -2,196 +2,663 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Maredipudi Nagalakshmi Beauty Lounge in Vijayawada. Bridal makeup, beauty services and personalised salon appointments.">
-  <title>Maredipudi Nagalakshmi | Beauty Lounge</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Maredipudi Nagalakshmi Beauty Lounge in Kothapeta, Vijayawada. Bridal makeup, party makeup and beauty services.">
+
+    <title>Maredipudi Nagalakshmi | Premium Beauty Lounge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
 
-<header class="navbar">
-  <a class="brand" href="#home">
-    <span class="brand-icon">N</span>
-    <span>MAREDIPUDI NAGALAKSHMI<small>BEAUTY LOUNGE</small></span>
-  </a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-  <nav id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#booking" class="nav-cta">Book Appointment</a>
-  </nav>
+<!-- Decorative background particles -->
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<!-- Announcement -->
+<div class="top-strip">
+    <span>✦</span>
+    BEAUTY • ELEGANCE • CONFIDENCE
+    <span>✦</span>
+</div>
+
+<!-- Navigation -->
+<header class="site-header">
+    <a href="#home" class="brand">
+        <span class="brand-logo">MN</span>
+        <span class="brand-text">
+            <strong>MAREDIPUDI NAGALAKSHMI</strong>
+            <small>PREMIUM BEAUTY LOUNGE</small>
+        </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#booking" class="nav-cta">BOOK NOW ↗</a>
+    </nav>
 </header>
 
 <main>
+
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-content">
-    <p class="eyebrow">BEAUTY • ELEGANCE • CONFIDENCE</p>
-    <h1>Discover Your<br><span>Beautiful Side.</span></h1>
-    <p class="hero-description">A touch of elegance, a moment of luxury, and beauty that feels uniquely yours.</p>
-    <div class="hero-actions">
-      <a href="#booking" class="btn btn-gold">Book an Appointment</a>
-      <a href="#gallery" class="btn btn-outline">Explore Our Gallery</a>
-    </div>
-    <p class="hero-note">Personalised beauty experiences in Vijayawada.</p>
-  </div>
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85" alt="Elegant professional beauty salon">
-  </div>
-</section>
 
-<section class="intro section" id="about">
-  <p class="eyebrow">WELCOME TO OUR BEAUTY LOUNGE</p>
-  <h2>Beauty is an Art.<br><span>Let Us Create Yours.</span></h2>
-  <p class="section-description">We believe every woman deserves to feel confident and beautiful. Enjoy personalised beauty care and special occasion styling in a welcoming environment.</p>
-</section>
-
-<section class="services section" id="services">
-  <div class="section-heading">
-    <p class="eyebrow">WHAT WE OFFER</p>
-    <h2>Our Beauty Services</h2>
-    <p>Thoughtfully designed experiences for your special moments.</p>
-  </div>
-  <div class="service-grid">
-    <article class="service-card">
-      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85" alt="Bridal makeup">
-      <div><h3>Bridal Makeup</h3><p>Elegant bridal looks for your unforgettable day.</p></div>
-    </article>
-    <article class="service-card">
-      <img src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=700&q=85" alt="Professional beauty makeup">
-      <div><h3>Party Makeup</h3><p>Beautiful styling for parties and celebrations.</p></div>
-    </article>
-    <article class="service-card">
-      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=85" alt="Hair styling salon">
-      <div><h3>Hair Styling</h3><p>Fresh hairstyles and personalised hair care.</p></div>
-    </article>
-    <article class="service-card">
-      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=700&q=85" alt="Relaxing beauty facial treatment">
-      <div><h3>Facial & Skin Care</h3><p>Relaxing beauty treatments for your skin.</p></div>
-    </article>
-  </div>
-</section>
-
-<section class="gallery section" id="gallery">
-  <div class="section-heading">
-    <p class="eyebrow">OUR STYLE & INSPIRATION</p>
-    <h2>Beauty Gallery</h2>
-    <p>A glimpse of beauty, elegance and inspiration.</p>
-  </div>
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85" alt="Wedding celebration inspiration">
-    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85" alt="Beauty portrait inspiration">
-    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=85" alt="Professional makeup inspiration">
-    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85" alt="Fashion and beauty inspiration">
-  </div>
-  <p class="gallery-note">Gallery images are illustrative inspiration photos, not verified customer work.</p>
-</section>
-
-<section class="reviews section" id="reviews">
-  <div class="section-heading">
-    <p class="eyebrow">KIND WORDS</p>
-    <h2>Customer Reviews</h2>
-    <p>Your feedback makes us better.</p>
-  </div>
-
-  <div class="review-grid">
-    {% for review in reviews %}
-    <article class="review-card">
-      <div class="stars" aria-label="{{ review['rating'] }} out of 5 stars">
-        {% for star in range(review['rating']) %}★{% endfor %}
-        {% for star in range(5 - review['rating']) %}☆{% endfor %}
-      </div>
-      <p>“{{ review['review_text'] }}”</p>
-      <h4>{{ review['customer_name'] }}</h4>
-      <small>Customer</small>
-    </article>
-    {% else %}
-    <p class="empty-reviews">Be one of the first customers to share your experience!</p>
-    {% endfor %}
-  </div>
-
-  <div class="feedback-box">
-    <h3>Share Your Experience</h3>
-    <p>We would love to hear your feedback.</p>
-    <form action="{{ url_for('submit_review') }}" method="POST" class="feedback-form">
-      <label for="review_name">Your Name</label>
-      <input id="review_name" name="review_name" type="text" maxlength="100" placeholder="Enter your name" required>
-      <label for="rating">Your Rating</label>
-      <select id="rating" name="rating" required>
-        <option value="">Select rating</option>
-        <option value="5">★★★★★ - Excellent</option>
-        <option value="4">★★★★ - Very Good</option>
-        <option value="3">★★★ - Good</option>
-        <option value="2">★★ - Average</option>
-        <option value="1">★ - Needs Improvement</option>
-      </select>
-      <label for="review_text">Your Feedback</label>
-      <textarea id="review_text" name="review_text" rows="4" maxlength="1000" placeholder="Tell us about your experience..." required></textarea>
-      <button class="btn btn-gold" type="submit">Submit Feedback</button>
-    </form>
-    <small>Reviews appear publicly after salon approval.</small>
-  </div>
-</section>
-
-<section class="booking section" id="booking">
-  <div class="booking-content">
-    <p class="eyebrow">LET'S MAKE YOU FEEL BEAUTIFUL</p>
-    <h2>Book Your Appointment</h2>
-    <p>Choose your preferred service and appointment time. We will contact you to confirm.</p>
-    <form action="{{ url_for('home') }}" method="POST" class="booking-form">
-      <div class="form-grid">
-        <div><label for="customer_name">Full Name *</label><input id="customer_name" name="customer_name" required placeholder="Your name"></div>
-        <div><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" required placeholder="Your phone number"></div>
-        <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email"></div>
-        <div><label for="service">Select Service *</label>
-          <select id="service" name="service" required>
-            <option value="">Choose service</option>
-            <option>Bridal Makeup</option>
-            <option>Party Makeup</option>
-            <option>Hair Styling</option>
-            <option>Facial & Skin Care</option>
-            <option>Other Beauty Services</option>
-          </select>
+    <div class="hero-copy">
+        <div class="hero-label">
+            <span class="label-line"></span>
+            YOUR BEAUTY DESTINATION
         </div>
-        <div><label for="appointment_date">Preferred Date *</label><input id="appointment_date" name="appointment_date" type="date" min="{{ today }}" required></div>
-        <div><label for="appointment_time">Preferred Time *</label><input id="appointment_time" name="appointment_time" type="time" required></div>
-      </div>
-      <label for="message">Additional Details</label>
-      <textarea id="message" name="message" rows="3" placeholder="Tell us anything we should know"></textarea>
-      <button type="submit" class="btn btn-gold">Send Appointment Request</button>
-    </form>
-    <p class="booking-note">Your appointment is a request, not a confirmed booking. We will contact you.</p>
-  </div>
+
+        <h1>
+            MAREDIPUDI<br>
+            <span>NAGALAKSHMI</span>
+            <em>Beauty Lounge</em>
+        </h1>
+
+        <p class="hero-description">
+            Discover your most beautiful self. Experience elegant
+            bridal makeup, occasion styling and personalised beauty
+            services designed to make every moment unforgettable.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#booking" class="button button-gold">
+                BOOK AN APPOINTMENT <span>↗</span>
+            </a>
+
+            <a href="#services" class="button button-outline">
+                EXPLORE SERVICES
+            </a>
+        </div>
+
+        <div class="hero-trust">
+            <div class="trust-symbol">✦</div>
+            <div>
+                <strong>YOUR BEAUTY. YOUR STYLE.</strong>
+                <small>Carefully planned beauty experiences.</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-art">
+
+        <div class="hero-image-frame">
+            <img
+                src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1100&q=90"
+                alt="Professional beauty portrait"
+                class="hero-main-image"
+            >
+        </div>
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="floating-beauty floating-one">✦</div>
+        <div class="floating-beauty floating-two">✧</div>
+        <div class="floating-beauty floating-three">❀</div>
+
+        <div class="hero-side-card">
+            <span>THE ART OF BEAUTY</span>
+            <strong>Glow with<br>confidence.</strong>
+            <small>Every detail matters.</small>
+        </div>
+
+        <div class="hero-stamp">
+            <span>BEAUTY</span>
+            <strong>MN</strong>
+            <span>LOUNGE</span>
+        </div>
+
+    </div>
+
+    <div class="hero-bottom-line">
+        <span>BRIDAL BEAUTY</span>
+        <span>✦</span>
+        <span>OCCASION MAKEUP</span>
+        <span>✦</span>
+        <span>PERSONALISED STYLING</span>
+    </div>
+
 </section>
 
-<section class="contact section" id="contact">
-  <p class="eyebrow">WE WOULD LOVE TO HEAR FROM YOU</p>
-  <h2>Visit Our Beauty Lounge</h2>
-  <div class="contact-details">
-    <p><strong>Address</strong><br>Chittinagar, Behind Kundala Market,<br>Kothapeta, Vijayawada</p>
-    <p><strong>Phone</strong><br><a href="tel:+918328313876">+91 8328313876</a></p>
-    <p><strong>Email</strong><br><a href="mailto:nagalakshmim483@gmail.com">nagalakshmim483@gmail.com</a></p>
-  </div>
-  <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chittinagar+Kundala+Market+Kothapeta+Vijayawada">Get Directions</a>
+
+<!-- ABOUT -->
+<section class="about-section section-space" id="about">
+
+    <div class="section-label">01 — OUR STORY</div>
+
+    <div class="about-layout">
+
+        <div class="about-visual">
+            <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=85"
+                alt="Beauty and makeup inspiration"
+            >
+
+            <div class="about-floating-card">
+                <span>✦</span>
+                <strong>Beauty is an experience.</strong>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <p class="eyebrow">WELCOME TO OUR BEAUTY WORLD</p>
+
+            <h2>
+                More than beauty.<br>
+                <em>A feeling of confidence.</em>
+            </h2>
+
+            <p>
+                Welcome to Maredipudi Nagalakshmi Beauty Lounge,
+                a beauty destination created around elegance,
+                personal style and confidence.
+            </p>
+
+            <p>
+                Whether you are preparing for your wedding,
+                celebrating a special occasion or simply treating
+                yourself, our goal is to make your beauty experience
+                comfortable, memorable and personal.
+            </p>
+
+            <a href="#booking" class="text-arrow">
+                PLAN YOUR BEAUTY EXPERIENCE ↗
+            </a>
+        </div>
+
+    </div>
 </section>
+
+
+<!-- SERVICES -->
+<section class="services-section section-space" id="services">
+
+    <div class="section-label">02 — OUR SERVICES</div>
+
+    <div class="section-heading">
+        <p class="eyebrow">BEAUTY WITH PERSONALITY</p>
+        <h2>Discover your <em>signature look.</em></h2>
+        <p>
+            Explore beauty and styling options for weddings,
+            celebrations and your special everyday moments.
+        </p>
+    </div>
+
+    <div class="service-grid">
+
+        <article class="service-card">
+            <div class="service-image">
+                <img
+                    src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=850&q=85"
+                    alt="Makeup products and brushes"
+                >
+                <span class="service-number">01</span>
+            </div>
+            <div class="service-info">
+                <span class="service-category">THE WEDDING EDIT</span>
+                <h3>Bridal Makeup</h3>
+                <p>Beautiful bridal styling for your unforgettable wedding moments.</p>
+                <a href="#booking">ENQUIRE NOW ↗</a>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img
+                    src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=850&q=85"
+                    alt="Makeup application"
+                >
+                <span class="service-number">02</span>
+            </div>
+            <div class="service-info">
+                <span class="service-category">THE CELEBRATION EDIT</span>
+                <h3>Party Makeup</h3>
+                <p>Elegant makeup looks for parties, engagements and special events.</p>
+                <a href="#booking">ENQUIRE NOW ↗</a>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img
+                    src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=850&q=85"
+                    alt="Beauty products and skincare"
+                >
+                <span class="service-number">03</span>
+            </div>
+            <div class="service-info">
+                <span class="service-category">THE PERSONAL EDIT</span>
+                <h3>Beauty & Styling</h3>
+                <p>Personalised beauty and styling experiences based on your preferences.</p>
+                <a href="#booking">ENQUIRE NOW ↗</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+<!-- FEATURE BANNER -->
+<section class="beauty-banner">
+    <div class="banner-decoration">✧</div>
+
+    <p>FOR YOUR MOST SPECIAL MOMENTS</p>
+
+    <h2>
+        Let your beauty<br>
+        <em>tell your story.</em>
+    </h2>
+
+    <a href="#booking" class="button button-light">
+        START YOUR ENQUIRY ↗
+    </a>
+</section>
+
+
+<!-- PACKAGES -->
+<section class="packages-section section-space" id="packages">
+
+    <div class="section-label">03 — BEAUTY EXPERIENCES</div>
+
+    <div class="section-heading">
+        <p class="eyebrow">MADE FOR YOUR MOMENTS</p>
+        <h2>Find your <em>perfect experience.</em></h2>
+        <p>Choose the occasion and contact us for service details and availability.</p>
+    </div>
+
+    <div class="package-grid">
+
+        <article class="package-card">
+            <span class="package-index">01</span>
+            <div class="package-icon">✧</div>
+            <p>THE BRIDAL COLLECTION</p>
+            <h3>Bridal Beauty</h3>
+            <p>For wedding celebrations and unforgettable bridal moments.</p>
+            <a href="#booking">REQUEST DETAILS ↗</a>
+        </article>
+
+        <article class="package-card package-featured">
+            <span class="package-index">02</span>
+            <div class="package-icon">❀</div>
+            <p>THE CELEBRATION COLLECTION</p>
+            <h3>Event Glam</h3>
+            <p>For engagements, parties, family functions and celebrations.</p>
+            <a href="#booking">REQUEST DETAILS ↗</a>
+        </article>
+
+        <article class="package-card">
+            <span class="package-index">03</span>
+            <div class="package-icon">✦</div>
+            <p>THE PERSONAL COLLECTION</p>
+            <h3>Personal Styling</h3>
+            <p>A beauty session planned around your individual preferences.</p>
+            <a href="#booking">REQUEST DETAILS ↗</a>
+        </article>
+
+    </div>
+
+    <p class="section-note">
+        Package names are introductory categories. Confirm exact services,
+        inclusions, prices and availability directly with the lounge.
+    </p>
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery-section section-space" id="gallery">
+
+    <div class="section-label">04 — THE GALLERY</div>
+
+    <div class="section-heading">
+        <p class="eyebrow">A WORLD OF BEAUTY</p>
+        <h2>Inspiration in <em>every detail.</em></h2>
+        <p>
+            A visual collection of beauty, makeup and styling inspiration.
+        </p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item gallery-tall">
+            <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
+                alt="Beauty portrait inspiration"
+            >
+            <span>BEAUTY</span>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=850&q=85"
+                alt="Natural makeup inspiration"
+            >
+            <span>STYLE</span>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1509630899638-7c7c2e4b8f7d?auto=format&fit=crop&w=850&q=85"
+                alt="Fashion and beauty inspiration"
+            >
+            <span>ELEGANCE</span>
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=850&q=85"
+                alt="Makeup and beauty inspiration"
+            >
+            <span>MAKEUP</span>
+        </div>
+
+    </div>
+
+    <p class="section-note">
+        These are illustrative inspiration images, not verified customer
+        photographs or completed salon work. Replace them with your own
+        portfolio photos when available.
+    </p>
+</section>
+
+
+<!-- CUSTOMER EXPERIENCE -->
+<section class="experience-section section-space">
+
+    <div class="experience-decoration">✦</div>
+
+    <p class="eyebrow">YOUR VOICE MATTERS</p>
+
+    <h2>Every beautiful experience<br><em>deserves to be shared.</em></h2>
+
+    <p>
+        Have you visited our beauty lounge? We would love to hear about
+        your experience and what we can do even better.
+    </p>
+
+    <a
+        class="button button-gold"
+        href="https://wa.me/918328313876?text=Hello%2C%20I%20would%20like%20to%20share%20my%20feedback."
+        target="_blank"
+        rel="noopener"
+    >
+        SHARE YOUR FEEDBACK ↗
+    </a>
+
+</section>
+
+
+<!-- BOOKING -->
+<section class="booking-section section-space" id="booking">
+
+    <div class="booking-layout">
+
+        <div class="booking-copy">
+            <p class="eyebrow">05 — APPOINTMENT ENQUIRY</p>
+
+            <h2>
+                Your special moment<br>
+                <em>starts right here.</em>
+            </h2>
+
+            <p>
+                Tell us what you are looking for. Submit your appointment
+                enquiry and we will contact you to discuss availability
+                and service details.
+            </p>
+
+            <div class="booking-points">
+                <div><span>✦</span> Personalised service enquiries</div>
+                <div><span>✦</span> Bridal and occasion appointments</div>
+                <div><span>✦</span> Direct contact with the lounge</div>
+            </div>
+
+            <div class="booking-contact">
+                <small>NEED HELP?</small>
+                <a href="tel:+918328313876">+91 83283 13876</a>
+            </div>
+        </div>
+
+
+        <form class="booking-form" method="POST" action="{{ url_for('home') }}">
+
+            <div class="form-heading">
+                <span>✦</span>
+                <h3>Book Your Appointment</h3>
+                <p>Complete the details below.</p>
+            </div>
+
+            <div class="form-field">
+                <label for="customer_name">Full Name *</label>
+                <input
+                    type="text"
+                    id="customer_name"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    maxlength="100"
+                    required
+                >
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-field">
+                    <label for="phone">Mobile Number *</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="10-digit number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Your email"
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-field">
+                <label for="service">Choose Your Service *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="Bridal Makeup">Bridal Makeup</option>
+                    <option value="Party Makeup">Party Makeup</option>
+                    <option value="Beauty and Styling">Beauty & Styling</option>
+                    <option value="Other Enquiry">Other Enquiry</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-field">
+                    <label for="appointment_date">Preferred Date *</label>
+                    <input
+                        type="date"
+                        id="appointment_date"
+                        name="appointment_date"
+                        min="{{ today }}"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="appointment_time">Preferred Time *</label>
+                    <input
+                        type="time"
+                        id="appointment_time"
+                        name="appointment_time"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-field">
+                <label for="message">Your Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Tell us about your occasion or requirements..."
+                ></textarea>
+            </div>
+
+            <button type="submit" class="button button-gold form-submit">
+                SUBMIT APPOINTMENT REQUEST ↗
+            </button>
+
+            <p class="form-disclaimer">
+                Your appointment is a request. The lounge will contact you
+                to confirm the booking.
+            </p>
+
+        </form>
+
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact-section section-space" id="contact">
+
+    <div class="section-label">06 — CONTACT & LOCATION</div>
+
+    <div class="contact-layout">
+
+        <div class="contact-heading">
+            <p class="eyebrow">WE WOULD LOVE TO HEAR FROM YOU</p>
+
+            <h2>
+                Let's create<br>
+                <em>your beautiful moment.</em>
+            </h2>
+
+            <p>
+                Connect with Maredipudi Nagalakshmi Beauty Lounge
+                for appointments and service enquiries.
+            </p>
+        </div>
+
+        <div class="contact-details">
+
+            <div class="contact-item">
+                <span class="contact-icon">☎</span>
+                <div>
+                    <small>CALL US</small>
+                    <a href="tel:+918328313876">+91 83283 13876</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">✉</span>
+                <div>
+                    <small>EMAIL US</small>
+                    <a href="mailto:nagalakshmim483@gmail.com">
+                        nagalakshmim483@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">⌖</span>
+                <div>
+                    <small>VISIT US</small>
+                    <p>
+                        Chittinagar, behind Kundala Market,
+                        Kothapeta, Vijayawada
+                    </p>
+                </div>
+            </div>
+
+            <a
+                class="button button-outline contact-whatsapp"
+                href="https://wa.me/918328313876"
+                target="_blank"
+                rel="noopener"
+            >
+                CHAT ON WHATSAPP ↗
+            </a>
+
+            <a
+                class="map-link"
+                href="https://www.google.com/maps/search/?api=1&query=Kundala+Market+Kothapeta+Vijayawada"
+                target="_blank"
+                rel="noopener"
+            >
+                GET DIRECTIONS ON GOOGLE MAPS ↗
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
 </main>
 
-<footer class="footer">
-  <a class="brand footer-brand" href="#home">MAREDIPUDI NAGALAKSHMI<small>BEAUTY LOUNGE</small></a>
-  <p>Elegance begins with you.</p>
-  <p>© 2026 Maredipudi Nagalakshmi Beauty Lounge. All rights reserved.</p>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <a href="#home" class="footer-brand">
+        <span class="brand-logo">MN</span>
+        <span class="brand-text">
+            <strong>MAREDIPUDI NAGALAKSHMI</strong>
+            <small>PREMIUM BEAUTY LOUNGE</small>
+        </span>
+    </a>
+
+    <p>BEAUTY • ELEGANCE • CONFIDENCE</p>
+
+    <div class="footer-line"></div>
+
+    <small>
+        © <span id="currentYear"></span>
+        Maredipudi Nagalakshmi Beauty Lounge. All rights reserved.
+    </small>
+
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/918328313876?text=Hello%20Maredipudi%20Nagalakshmi%20Beauty%20Lounge%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-  <span>☏</span> WhatsApp
+
+<!-- FLOATING WHATSAPP -->
+<a
+    class="whatsapp-float"
+    href="https://wa.me/918328313876?text=Hello%2C%20I%20would%20like%20to%20know%20about%20your%20beauty%20services."
+    target="_blank"
+    rel="noopener"
+    aria-label="Contact us on WhatsApp"
+>
+    <span>◉</span>
 </a>
 
+
 <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
