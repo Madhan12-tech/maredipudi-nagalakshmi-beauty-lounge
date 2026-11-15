@@ -1595,3 +1595,80 @@ h2 em {
         transition-duration: .01ms !important;
     }
 }
+
+
+
+/* SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ACTIVE NAVIGATION */
+
+.nav-links a.nav-active:not(.nav-cta) {
+    color: var(--gold-dark);
+}
+
+/* PARTICLE ANIMATION */
+
+.particle-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    color: rgba(180, 139, 74, .65);
+    font-size: 17px;
+    animation: particleFloat 7s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(20px) scale(.7);
+    }
+    50% {
+        opacity: .8;
+        transform: translateY(-30px) scale(1.2);
+    }
+}
+
+/* BUTTON INTERACTION */
+
+.button-pressed {
+    transform: scale(.97);
+}
+
+/* IMAGE FALLBACK */
+
+.image-unavailable {
+    background: #f4e8e3;
+    object-fit: contain;
+    min-height: 120px;
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .particle-container {
+        display: none;
+    }
+}
