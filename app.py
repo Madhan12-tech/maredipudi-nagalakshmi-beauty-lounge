@@ -1,3 +1,4 @@
+
 import os
 import sqlite3
 from datetime import date
@@ -7,10 +8,12 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change-this-secret-before-production")
 DB_PATH = os.environ.get("DB_PATH", "bookings.db")
 
+
 def get_db():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
 
 def init_db():
     with get_db() as conn:
@@ -27,6 +30,17 @@ def init_db():
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         """)
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS reviews (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                customer_name TEXT NOT NULL,
+                rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 5),
+                review_text TEXT NOT NULL,
+                approved INTEGER NOT NULL DEFAULT 0,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -53,18 +67,69 @@ def home():
         flash("Your appointment request has been received. We will contact you to confirm.", "success")
         return redirect(url_for("home") + "#booking")
 
-    return render_template("index.html", today=date.today().isoformat())
+    with get_db() as conn:
+        reviews = conn.execute(
+            "SELECT customer_name, rating, review_text, created_at FROM reviews WHERE approved = 1 ORDER BY created_at DESC LIMIT 12"
+        ).fetchall()
+    return render_template("index.html", today=date.today().isoformat(), reviews=reviews)
+
+
+@app.route("/review", methods=["POST"])
+def submit_review():
+    name = request.form.get("review_name", "").strip()
+    rating = request.form.get("rating", "").strip()
+    review_text = request.form.get("review_text", "").strip()
+
+    try:
+        rating_value = int(rating)
+    except (TypeError, ValueError):
+        rating_value = 0
+
+    if not name or len(name) > 100 or not review_text or len(review_text) > 1000 or rating_value not in range(1, 6):
+        flash("Please enter your name, a rating from 1 to 5, and feedback (up to 1000 characters).", "error")
+        return redirect(url_for("home") + "#reviews")
+
+    with get_db() as conn:
+        conn.execute(
+            "INSERT INTO reviews (customer_name, rating, review_text) VALUES (?, ?, ?)",
+            (name, rating_value, review_text)
+        )
+
+    flash("Thank you for your feedback! It will appear after salon approval.", "success")
+    return redirect(url_for("home") + "#reviews")
+
 
 @app.route("/admin")
 def admin():
-    # Simple demo dashboard. Add authentication before using this publicly.
+    # Demo dashboard only. Add authentication before making this route public.
     with get_db() as conn:
         bookings = conn.execute("SELECT * FROM bookings ORDER BY created_at DESC").fetchall()
-    return render_template("admin.html", bookings=bookings)
+        reviews = conn.execute("SELECT * FROM reviews ORDER BY created_at DESC").fetchall()
+    return render_template("admin.html", bookings=bookings, reviews=reviews)
+
+
+@app.route("/admin/review/<int:review_id>/approve", methods=["POST"])
+def approve_review(review_id):
+    # Protect /admin and this action with authentication before public launch.
+    with get_db() as conn:
+        conn.execute("UPDATE reviews SET approved = 1 WHERE id = ?", (review_id,))
+    flash("Review approved.", "success")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin/review/<int:review_id>/delete", methods=["POST"])
+def delete_review(review_id):
+    # Protect /admin and this action with authentication before public launch.
+    with get_db() as conn:
+        conn.execute("DELETE FROM reviews WHERE id = ?", (review_id,))
+    flash("Review deleted.", "success")
+    return redirect(url_for("admin"))
+
 
 @app.route("/health")
 def health():
     return {"status": "ok"}
+
 
 init_db()
 
